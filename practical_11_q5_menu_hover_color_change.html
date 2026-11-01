@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu Hover Color Change</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .nav-item {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 4px;
+            background-color: #e0e0e0;
+            color: #222;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Menu Dynamic Color Change on Mouse Hover</h2>
+    <p>Move mouse over the menu items:</p>
+
+    <a href="#item1" class="nav-item"
+        onmouseover="changeMenuColor(this, '#e91e63', '#ffffff')"
+        onmouseout="changeMenuColor(this, '#e0e0e0', '#222222')">
+        Home
+    </a>
+    <a href="#item2" class="nav-item"
+        onmouseover="changeMenuColor(this, '#9c27b0', '#ffffff')"
+        onmouseout="changeMenuColor(this, '#e0e0e0', '#222222')">
+        Services
+    </a>
+    <a href="#item3" class="nav-item"
+        onmouseover="changeMenuColor(this, '#3f51b5', '#ffffff')"
+        onmouseout="changeMenuColor(this, '#e0e0e0', '#222222')">
+        Portfolio
+    </a>
+    <a href="#item4" class="nav-item"
+        onmouseover="changeMenuColor(this, '#009688', '#ffffff')"
+        onmouseout="changeMenuColor(this, '#e0e0e0', '#222222')">
+        Contact
+    </a>
+
+    <script>
+        function changeMenuColor(element, bgColor, textColor) {
+            element.style.backgroundColor = bgColor;
+            element.style.color = textColor;
+        }
+    </script>
+</body>
+</html>

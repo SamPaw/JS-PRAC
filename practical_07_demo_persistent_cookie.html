@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Persistent Cookie Demonstration</title>
+</head>
+<body>
+    <h2>Persistent Cookie Demo</h2>
+    <p>Persistent cookies specify an expiration date or max-age.</p>
+
+    <button onclick="createPersistentCookie()">Create Persistent Cookie</button>
+    <button onclick="viewPersistentCookie()">View Cookies</button>
+    <button onclick="removePersistentCookie()">Delete Persistent Cookie</button>
+
+    <p id="cookieText"></p>
+
+    <script>
+        function createPersistentCookie() {
+            let expDate = new Date();
+            expDate.setFullYear(expDate.getFullYear() + 1);
+            document.cookie = "user_role=Student; expires=" + expDate.toUTCString() + "; path=/";
+            alert("Persistent cookie 'user_role=Student' created.");
+        }
+
+        function viewPersistentCookie() {
+            document.getElementById("cookieText").innerText = "Active Cookies: " + (document.cookie || "No cookies found");
+        }
+
+        function removePersistentCookie() {
+            document.cookie = "user_role=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+            alert("Persistent cookie removed.");
+            viewPersistentCookie();
+        }
+    </script>
+</body>
+</html>

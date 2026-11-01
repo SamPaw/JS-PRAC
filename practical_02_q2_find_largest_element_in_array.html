@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Largest Element in Array</title>
+</head>
+<body>
+    <h2>Largest Element in Array</h2>
+    <script>
+        let arr = [24, 78, 12, 95, 43, 67];
+        let largest = arr[0];
+
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] > largest) {
+                largest = arr[i];
+            }
+        }
+
+        document.write("Array: " + arr.join(", ") + "<br>");
+        document.write("Largest element: " + largest);
+    </script>
+</body>
+</html>

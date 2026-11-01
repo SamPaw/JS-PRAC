@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mandatory Fields Validation</title>
+</head>
+<body>
+    <h2>Mandatory Fields Validation</h2>
+    <form id="mandForm" onsubmit="return validateMandatory()">
+        <label>Full Name *:</label><br>
+        <input type="text" id="mName"><br><br>
+
+        <label>Email *:</label><br>
+        <input type="text" id="mEmail"><br><br>
+
+        <label>Contact Number *:</label><br>
+        <input type="text" id="mContact"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="validationResult" style="color:red; font-weight:bold; margin-top:10px;"></div>
+
+    <script>
+        function validateMandatory() {
+            let name = document.getElementById("mName").value.trim();
+            let email = document.getElementById("mEmail").value.trim();
+            let contact = document.getElementById("mContact").value.trim();
+            let res = document.getElementById("validationResult");
+
+            if (name === "" || email === "" || contact === "") {
+                res.style.color = "red";
+                res.innerHTML = "Validation Error: All fields marked with * are mandatory!";
+                return false;
+            }
+
+            res.style.color = "green";
+            res.innerHTML = "All mandatory fields are filled. Form submitted successfully!";
+            return false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Rollover Effect</title>
+</head>
+<body>
+    <h2>Image Rollover using onmouseover and onmouseout</h2>
+    <p>Move mouse over the image below:</p>
+
+    <img id="myImage" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='140'><rect width='220' height='140' fill='%232E86AB'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='20' font-family='Arial'>Initial Image</text></svg>"
+        onmouseover="swapImageHover()"
+        onmouseout="swapImageNormal()"
+        style="cursor:pointer; border:2px solid #333;">
+
+    <script>
+        let img1 = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='140'><rect width='220' height='140' fill='%232E86AB'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='20' font-family='Arial'>Initial Image</text></svg>";
+        let img2 = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='140'><rect width='220' height='140' fill='%23E94F37'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='20' font-family='Arial'>Hovered Image</text></svg>";
+
+        function swapImageHover() {
+            document.getElementById("myImage").src = img2;
+        }
+
+        function swapImageNormal() {
+            document.getElementById("myImage").src = img1;
+        }
+    </script>
+</body>
+</html>

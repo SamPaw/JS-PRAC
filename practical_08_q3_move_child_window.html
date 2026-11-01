@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Move Child Window</title>
+</head>
+<body>
+    <h2>Move Child Window to Different Position</h2>
+
+    <button onclick="openWin()">1. Open Window</button>
+    <button onclick="moveWin()">2. Move to (300, 300)</button>
+
+    <script>
+        let win = null;
+
+        function openWin() {
+            win = window.open("", "movableWin", "width=350,height=250,top=50,left=50");
+            win.document.write("<h3>Movable Window</h3>");
+        }
+
+        function moveWin() {
+            if (win && !win.closed) {
+                win.moveTo(300, 300);
+            } else {
+                alert("Please open the window first.");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prompt User Greeting</title>
+</head>
+<body>
+    <h2>Greeting Using prompt()</h2>
+
+    <button onclick="askNameAndGreet()">Enter Your Name</button>
+    <h3 id="greeting"></h3>
+
+    <script>
+        function askNameAndGreet() {
+            let userName = prompt("Please enter your name:");
+            if (userName !== null && userName.trim() !== "") {
+                document.getElementById("greeting").innerText = "Hello, " + userName.trim() + "! Have a great day!";
+            }
+        }
+    </script>
+</body>
+</html>

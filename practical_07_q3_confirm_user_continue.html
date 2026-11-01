@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirm User Continue</title>
+</head>
+<body>
+    <h2>Confirm Dialog Box</h2>
+
+    <button onclick="checkContinue()">Click to Proceed</button>
+    <p id="choiceResult" style="font-weight: bold;"></p>
+
+    <script>
+        function checkContinue() {
+            let response = confirm("Do you want to continue?");
+            let resultEl = document.getElementById("choiceResult");
+
+            if (response === true) {
+                resultEl.style.color = "green";
+                resultEl.innerText = "You chose to CONTINUE.";
+            } else {
+                resultEl.style.color = "red";
+                resultEl.innerText = "You CANCELLED the action.";
+            }
+        }
+    </script>
+</body>
+</html>

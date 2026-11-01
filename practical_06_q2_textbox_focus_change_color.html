@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Textbox Color on Focus</title>
+</head>
+<body>
+    <h2>Change Background Color on Focus</h2>
+
+    <label>Click inside the text box:</label><br>
+    <input type="text" id="colorBox" onfocus="handleFocus(this)" onblur="handleBlur(this)">
+
+    <script>
+        function handleFocus(element) {
+            element.style.backgroundColor = "lightyellow";
+        }
+
+        function handleBlur(element) {
+            element.style.backgroundColor = "white";
+        }
+    </script>
+</body>
+</html>

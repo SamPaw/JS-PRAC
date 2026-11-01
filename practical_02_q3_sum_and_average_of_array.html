@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum and Average of Array</title>
+</head>
+<body>
+    <h2>Sum and Average of Array Elements</h2>
+    <script>
+        let marks = [85, 90, 78, 92, 88];
+        let sum = 0;
+
+        for (let i = 0; i < marks.length; i++) {
+            sum += marks[i];
+        }
+
+        let average = sum / marks.length;
+
+        document.write("Array elements: " + marks.join(", ") + "<br>");
+        document.write("Sum: " + sum + "<br>");
+        document.write("Average: " + average.toFixed(2));
+    </script>
+</body>
+</html>

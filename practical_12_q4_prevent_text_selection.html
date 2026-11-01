@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prevent Text Selection</title>
+    <style>
+        body {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Prevent Text Selection</h2>
+    <p>This text cannot be selected or highlighted using mouse cursor.</p>
+    <p>Protected Content: The quick brown fox jumps over the lazy dog.</p>
+
+    <script>
+        document.onselectstart = function() {
+            return false;
+        };
+    </script>
+</body>
+</html>

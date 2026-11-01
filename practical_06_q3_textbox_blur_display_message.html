@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Textbox onblur Message</title>
+</head>
+<body>
+    <h2>Display Message on Blur</h2>
+
+    <label>Enter text then click outside:</label><br>
+    <input type="text" id="blurInput" onblur="handleBlur()"><br>
+    <p id="blurMessage" style="color: blue;"></p>
+
+    <script>
+        function handleBlur() {
+            let val = document.getElementById("blurInput").value;
+            document.getElementById("blurMessage").innerText =
+                "Input lost focus. Entered value: " + (val || "(empty)");
+        }
+    </script>
+</body>
+</html>

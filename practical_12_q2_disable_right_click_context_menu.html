@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disable Right-Click Context Menu</title>
+</head>
+<body oncontextmenu="return false;">
+    <h2>Disable Right-Click Context Menu</h2>
+    <p>Right-clicking anywhere on this page is disabled.</p>
+
+    <script>
+        document.oncontextmenu = function() {
+            return false;
+        };
+    </script>
+</body>
+</html>

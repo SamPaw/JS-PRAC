@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Count Character Occurrences</title>
+</head>
+<body>
+    <h2>Count Occurrence of a Character</h2>
+    <script>
+        let text = "banana papaya apple";
+        let target = "a";
+        let count = 0;
+
+        for (let i = 0; i < text.length; i++) {
+            if (text.charAt(i) === target) {
+                count++;
+            }
+        }
+
+        document.write("String: '" + text + "'<br>");
+        document.write("Character '" + target + "' occurs " + count + " times.");
+    </script>
+</body>
+</html>

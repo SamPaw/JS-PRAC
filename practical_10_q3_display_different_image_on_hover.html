@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Different Image on Hover</title>
+</head>
+<body>
+    <h2>Display Different Image on Hover</h2>
+
+    <img id="toggleImg" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='140'><rect width='220' height='140' fill='%232E86AB'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='20' font-family='Arial'>Initial Image</text></svg>"
+        onmouseover="changeImage(imgAlt)"
+        onmouseout="changeImage(imgDef)"
+        style="border: 2px solid #555; cursor: pointer;">
+
+    <script>
+        let imgDef = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='140'><rect width='220' height='140' fill='%232E86AB'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='20' font-family='Arial'>Initial Image</text></svg>";
+        let imgAlt = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='140'><rect width='220' height='140' fill='%23E94F37'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='20' font-family='Arial'>Hovered Image</text></svg>";
+
+        function changeImage(newSrc) {
+            document.getElementById("toggleImg").src = newSrc;
+        }
+    </script>
+</body>
+</html>

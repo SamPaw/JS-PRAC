@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Drop-Down Menu</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .menu-bar { background-color: #333; padding: 10px; }
+        .dropdown-btn {
+            background-color: #ff5722;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        .dropdown-menu {
+            display: none;
+            background-color: #fff;
+            width: 180px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+            position: absolute;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+        .dropdown-menu a:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Drop-Down Menu using JavaScript</h2>
+
+    <div class="menu-bar">
+        <button class="dropdown-btn" onclick="toggleMenu()">Select Category &#9660;</button>
+        <div id="dropContent" class="dropdown-menu">
+            <a href="#electronics">Electronics</a>
+            <a href="#computers">Computers</a>
+            <a href="#stationery">Stationery</a>
+            <a href="#books">Books</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            let menu = document.getElementById("dropContent");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

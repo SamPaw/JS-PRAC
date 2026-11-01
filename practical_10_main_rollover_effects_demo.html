@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practical 10 - Rollover Effects Demo</title>
+</head>
+<body>
+    <h2>Rollover Effects (Image and Button)</h2>
+
+    <h3>1. Image Rollover:</h3>
+    <img id="rollImg" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='140'><rect width='220' height='140' fill='%232E86AB'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='20' font-family='Arial'>Initial Image</text></svg>"
+        onmouseover="setHoverImg(true)"
+        onmouseout="setHoverImg(false)"
+        style="cursor:pointer; border:2px solid #333;">
+
+    <h3>2. Button Rollover:</h3>
+    <button id="rollBtn"
+        onmouseover="setBtnHover(true)"
+        onmouseout="setBtnHover(false)"
+        style="padding:10px 20px; font-size:16px; border:none; cursor:pointer; background-color:#e0e0e0; color:black;">
+        Hover Over Me
+    </button>
+
+    <script>
+        let imgInitial = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='140'><rect width='220' height='140' fill='%232E86AB'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='20' font-family='Arial'>Initial Image</text></svg>";
+        let imgHover = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='140'><rect width='220' height='140' fill='%23E94F37'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='20' font-family='Arial'>Hovered Image</text></svg>";
+
+        function setHoverImg(isHover) {
+            document.getElementById("rollImg").src = isHover ? imgHover : imgInitial;
+        }
+
+        function setBtnHover(isHover) {
+            let btn = document.getElementById("rollBtn");
+            btn.style.backgroundColor = isHover ? "#4CAF50" : "#e0e0e0";
+            btn.style.color = isHover ? "white" : "black";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prompt Sum of Two Numbers</title>
+</head>
+<body>
+    <h2>Calculate Sum using prompt()</h2>
+
+    <button onclick="calculateSum()">Add Two Numbers</button>
+    <p id="sumResult"></p>
+
+    <script>
+        function calculateSum() {
+            let num1Str = prompt("Enter first number:");
+            let num2Str = prompt("Enter second number:");
+
+            let n1 = parseFloat(num1Str);
+            let n2 = parseFloat(num2Str);
+
+            if (isNaN(n1) || isNaN(n2)) {
+                alert("Please enter valid numeric values!");
+                return;
+            }
+
+            let sum = n1 + n2;
+            document.getElementById("sumResult").innerHTML =
+                "First Number: " + n1 + "<br>Second Number: " + n2 + "<br><strong>Sum = " + sum + "</strong>";
+        }
+    </script>
+</body>
+</html>

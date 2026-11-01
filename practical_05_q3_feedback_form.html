@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+</head>
+<body>
+    <h2>Course Feedback Form</h2>
+    <form id="feedbackForm" onsubmit="return submitFeedback()">
+        <label>Your Name:</label><br>
+        <input type="text" id="fbName"><br><br>
+
+        <label>Rate the Course:</label><br>
+        <input type="radio" name="rating" value="Excellent" checked> Excellent
+        <input type="radio" name="rating" value="Good"> Good
+        <input type="radio" name="rating" value="Average"> Average<br><br>
+
+        <label>What did you like most?</label><br>
+        <input type="checkbox" name="liked" value="Practical Labs"> Practical Labs
+        <input type="checkbox" name="liked" value="Lectures"> Lectures
+        <input type="checkbox" name="liked" value="Assignments"> Assignments<br><br>
+
+        <label>Semester:</label><br>
+        <select id="semester">
+            <option value="Semester 3">Semester 3</option>
+            <option value="Semester 4">Semester 4</option>
+            <option value="Semester 5">Semester 5</option>
+            <option value="Semester 6">Semester 6</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit Feedback">
+    </form>
+
+    <div id="fbOutput"></div>
+
+    <script>
+        function submitFeedback() {
+            let name = document.getElementById("fbName").value;
+            let sem = document.getElementById("semester").value;
+
+            let rating = "Not given";
+            let ratingEls = document.getElementsByName("rating");
+            for (let i = 0; i < ratingEls.length; i++) {
+                if (ratingEls[i].checked) {
+                    rating = ratingEls[i].value;
+                    break;
+                }
+            }
+
+            let liked = [];
+            let likedEls = document.getElementsByName("liked");
+            for (let i = 0; i < likedEls.length; i++) {
+                if (likedEls[i].checked) {
+                    liked.push(likedEls[i].value);
+                }
+            }
+
+            document.getElementById("fbOutput").innerHTML =
+                "<h3>Thank You for Your Feedback!</h3>" +
+                "Name: " + (name || "Anonymous") + "<br>" +
+                "Rating: " + rating + "<br>" +
+                "Liked: " + (liked.length ? liked.join(", ") : "None") + "<br>" +
+                "Semester: " + sem;
+
+            return false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Hover Background Color</title>
+</head>
+<body>
+    <h2>Change Button Background Color on Mouse Hover</h2>
+
+    <button id="hoverButton"
+        onmouseover="changeColor(this, 'crimson', 'white')"
+        onmouseout="changeColor(this, 'lightgray', 'black')"
+        style="padding: 12px 24px; font-size: 16px; cursor: pointer; border: 1px solid #999;">
+        Hover Cursor Here
+    </button>
+
+    <script>
+        function changeColor(element, bgColor, textColor) {
+            element.style.backgroundColor = bgColor;
+            element.style.color = textColor;
+        }
+    </script>
+</body>
+</html>

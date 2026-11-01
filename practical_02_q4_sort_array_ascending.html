@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sort Array in Ascending Order</title>
+</head>
+<body>
+    <h2>Sort Array in Ascending Order</h2>
+    <script>
+        let numbers = [50, 12, 89, 5, 34, 71];
+        document.write("Before sorting: " + numbers.join(", ") + "<br>");
+
+        numbers.sort(function(a, b) {
+            return a - b;
+        });
+
+        document.write("Sorted in ascending order: " + numbers.join(", "));
+    </script>
+</body>
+</html>

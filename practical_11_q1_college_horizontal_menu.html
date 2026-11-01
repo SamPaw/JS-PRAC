@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Website Horizontal Menu</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        .college-menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #003366;
+            overflow: hidden;
+        }
+        .college-menu li {
+            float: left;
+        }
+        .college-menu li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .college-menu li a:hover {
+            background-color: #FF9900;
+            color: #000;
+        }
+        #contentArea {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f2f2f2;
+            border-left: 5px solid #003366;
+        }
+    </style>
+</head>
+<body>
+    <h2>MIT College Website - Horizontal Navigation Menu</h2>
+
+    <ul class="college-menu">
+        <li><a onclick="navigateMenu('Home')">Home</a></li>
+        <li><a onclick="navigateMenu('Departments')">Departments</a></li>
+        <li><a onclick="navigateMenu('Admissions')">Admissions</a></li>
+        <li><a onclick="navigateMenu('Academics')">Academics</a></li>
+        <li><a onclick="navigateMenu('Examination')">Examination</a></li>
+        <li><a onclick="navigateMenu('Placements')">Placements</a></li>
+        <li><a onclick="navigateMenu('Contact Us')">Contact Us</a></li>
+    </ul>
+
+    <div id="contentArea">
+        <h3 id="sectionTitle">Welcome to College Portal</h3>
+        <p id="sectionDesc">Click any menu item above to navigate.</p>
+    </div>
+
+    <script>
+        function navigateMenu(menuItem) {
+            document.getElementById("sectionTitle").innerText = menuItem + " Section";
+            document.getElementById("sectionDesc").innerText = "You navigated to the " + menuItem + " page.";
+        }
+    </script>
+</body>
+</html>

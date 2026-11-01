@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Element Using indexOf</title>
+</head>
+<body>
+    <h2>Search Element Using indexOf()</h2>
+    <script>
+        let cities = ["Mumbai", "Pune", "Delhi", "Nagpur", "Nashik"];
+        let searchCity = "Pune";
+
+        let index = cities.indexOf(searchCity);
+
+        document.write("Cities: " + cities.join(", ") + "<br>");
+        if (index !== -1) {
+            document.write("City '" + searchCity + "' found at index " + index + ".");
+        } else {
+            document.write("City '" + searchCity + "' not found.");
+        }
+    </script>
+</body>
+</html>

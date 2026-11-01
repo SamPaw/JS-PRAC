@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Close Child Window</title>
+</head>
+<body>
+    <h2>Close Child Window using Button</h2>
+
+    <button onclick="openChild()">Open Child Window</button>
+    <button onclick="closeChild()">Close Child Window</button>
+
+    <script>
+        let child = null;
+
+        function openChild() {
+            child = window.open("", "closableWin", "width=400,height=300");
+            child.document.write("<h3>Child Window</h3><p>Click 'Close Child Window' in parent to close me.</p>");
+        }
+
+        function closeChild() {
+            if (child && !child.closed) {
+                child.close();
+            } else {
+                alert("Child window is already closed or was never opened.");
+            }
+        }
+    </script>
+</body>
+</html>

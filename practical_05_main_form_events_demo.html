@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practical 5 - Form Events Demonstration</title>
+</head>
+<body>
+    <h2>JavaScript Form Events Demo</h2>
+    <form onsubmit="logEvent('onsubmit triggered'); return false;" onreset="logEvent('onreset triggered')">
+        <label>Input with onfocus, onblur, oninput, onchange:</label><br>
+        <input type="text" id="demoInput"
+            onfocus="logEvent('onfocus: input focused')"
+            onblur="logEvent('onblur: input lost focus')"
+            oninput="logEvent('oninput: typing in progress')"
+            onchange="logEvent('onchange: input value changed')"><br><br>
+
+        <button type="button" onclick="logEvent('onclick triggered')" ondblclick="logEvent('ondblclick triggered')">
+            Single Click / Double Click Me
+        </button><br><br>
+
+        <input type="submit" value="Submit Form">
+        <input type="reset" value="Reset Form">
+    </form>
+
+    <h3>Event Log:</h3>
+    <div id="log" style="background:#f4f4f4; padding:10px; border:1px solid #ccc; width:400px; height:150px; overflow-y:scroll;"></div>
+
+    <script>
+        function logEvent(msg) {
+            let logBox = document.getElementById("log");
+            logBox.innerHTML += msg + "<br>";
+            logBox.scrollTop = logBox.scrollHeight;
+        }
+    </script>
+</body>
+</html>

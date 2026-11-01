@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practical 2 - Array Functionalities and Functions</title>
+</head>
+<body>
+    <h2>Array Operations and Built-in Functions</h2>
+    <script>
+        let fruits = ["Apple", "Banana", "Mango", "Orange"];
+
+        document.write("Original array: " + fruits.join(", ") + "<br>");
+        document.write("Array length: " + fruits.length + "<br>");
+
+        fruits.push("Grapes");
+        document.write("After push('Grapes'): " + fruits.join(", ") + "<br>");
+
+        let popped = fruits.pop();
+        document.write("Popped item: " + popped + "<br>");
+        document.write("After pop(): " + fruits.join(", ") + "<br>");
+
+        fruits.unshift("Pineapple");
+        document.write("After unshift('Pineapple'): " + fruits.join(", ") + "<br>");
+
+        let shifted = fruits.shift();
+        document.write("Shifted item: " + shifted + "<br>");
+        document.write("After shift(): " + fruits.join(", ") + "<br>");
+
+        fruits.sort();
+        document.write("Sorted array: " + fruits.join(", ") + "<br>");
+
+        fruits.reverse();
+        document.write("Reversed array: " + fruits.join(", ") + "<br>");
+
+        let pos = fruits.indexOf("Mango");
+        document.write("Index of 'Mango': " + pos + "<br>");
+    </script>
+</body>
+</html>

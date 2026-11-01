@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validate Name Not Empty on Submit</title>
+</head>
+<body>
+    <h2>Validate Name Field on Submit</h2>
+
+    <form onsubmit="return validateNameField()">
+        <label>Name:</label>
+        <input type="text" id="userName">
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateNameField() {
+            let name = document.getElementById("userName").value.trim();
+            if (name === "") {
+                alert("Validation Error: Name field cannot be empty!");
+                return false;
+            }
+            alert("Success: Form submitted for " + name);
+            return false;
+        }
+    </script>
+</body>
+</html>

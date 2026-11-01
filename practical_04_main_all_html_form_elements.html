@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practical 4 - HTML Form Elements</title>
+</head>
+<body>
+    <h2>HTML Form Elements Implementation</h2>
+    <form id="userForm">
+        <label>Full Name:</label><br>
+        <input type="text" id="fullname"><br><br>
+
+        <label>Password:</label><br>
+        <input type="password" id="password"><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <input type="radio" name="gender" value="Other"> Other<br><br>
+
+        <label>Skills:</label><br>
+        <input type="checkbox" name="skills" value="HTML"> HTML
+        <input type="checkbox" name="skills" value="CSS"> CSS
+        <input type="checkbox" name="skills" value="JavaScript"> JavaScript<br><br>
+
+        <label>City:</label><br>
+        <select id="city">
+            <option value="">--Select City--</option>
+            <option value="Pune">Pune</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Nashik">Nashik</option>
+        </select><br><br>
+
+        <label>Address:</label><br>
+        <textarea id="address" rows="3" cols="30"></textarea><br><br>
+
+        <button type="button" onclick="displayFormData()">Submit Form</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+        function displayFormData() {
+            let name = document.getElementById("fullname").value;
+            let pass = document.getElementById("password").value;
+            let city = document.getElementById("city").value;
+            let address = document.getElementById("address").value;
+
+            let genderEls = document.getElementsByName("gender");
+            let gender = "Not selected";
+            for (let i = 0; i < genderEls.length; i++) {
+                if (genderEls[i].checked) {
+                    gender = genderEls[i].value;
+                    break;
+                }
+            }
+
+            let skillEls = document.getElementsByName("skills");
+            let skills = [];
+            for (let i = 0; i < skillEls.length; i++) {
+                if (skillEls[i].checked) {
+                    skills.push(skillEls[i].value);
+                }
+            }
+
+            document.getElementById("output").innerHTML =
+                "<h3>Form Output:</h3>" +
+                "Name: " + name + "<br>" +
+                "Password: " + pass + "<br>" +
+                "Gender: " + gender + "<br>" +
+                "Skills: " + (skills.length > 0 ? skills.join(", ") : "None") + "<br>" +
+                "City: " + city + "<br>" +
+                "Address: " + address;
+        }
+    </script>
+</body>
+</html>

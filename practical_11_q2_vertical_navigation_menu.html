@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vertical Navigation Menu</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .vertical-menu {
+            width: 220px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .vertical-menu a {
+            background-color: #eee;
+            color: black;
+            display: block;
+            padding: 12px;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+        .vertical-menu a:last-child {
+            border-bottom: none;
+        }
+        .vertical-menu a:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        #infoPanel {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Vertical Navigation Menu</h2>
+
+    <div class="vertical-menu">
+        <a onclick="selectTab('Inbox (12 Unread)')">Inbox</a>
+        <a onclick="selectTab('Sent Mails')">Sent Mails</a>
+        <a onclick="selectTab('Drafts (3)')">Drafts</a>
+        <a onclick="selectTab('Trash')">Trash</a>
+        <a onclick="selectTab('Spam')">Spam</a>
+    </div>
+
+    <p id="infoPanel">Selected Menu: Inbox</p>
+
+    <script>
+        function selectTab(tabName) {
+            document.getElementById("infoPanel").innerText = "Selected Menu: " + tabName;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practical 11 - Implementing Menus Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .h-nav { background: #333; overflow: hidden; }
+        .h-nav a { float: left; display: block; color: white; text-align: center; padding: 12px 18px; text-decoration: none; }
+        .h-nav a:hover { background-color: #555; }
+
+        .v-nav { width: 180px; background: #f4f4f4; border: 1px solid #ccc; margin-top: 20px; }
+        .v-nav a { display: block; padding: 10px; color: #333; text-decoration: none; border-bottom: 1px solid #ddd; }
+        .v-nav a:hover { background-color: #ddd; }
+
+        .dropdown { position: relative; display: inline-block; margin-top: 20px; }
+        .dropbtn { background-color: #4CAF50; color: white; padding: 10px 16px; border: none; cursor: pointer; }
+        .dropdown-content { display: none; position: absolute; background-color: #f9f9f9; min-width: 150px; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); }
+        .dropdown-content a { color: black; padding: 10px 14px; text-decoration: block; display: block; }
+        .dropdown-content a:hover { background-color: #f1f1f1; }
+    </style>
+</head>
+<body>
+    <h2>Website Navigation Menus Demo</h2>
+
+    <h3>1. Horizontal Menu:</h3>
+    <div class="h-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <h3>2. Vertical Menu:</h3>
+    <div class="v-nav">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#profile">Profile</a>
+        <a href="#settings">Settings</a>
+        <a href="#logout">Logout</a>
+    </div>
+
+    <h3>3. Drop-Down Menu (Toggle with JS):</h3>
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown()">Options &#9662;</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#opt1">Option 1</a>
+            <a href="#opt2">Option 2</a>
+            <a href="#opt3">Option 3</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            let menu = document.getElementById("myDropdown");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+    </script>
+</body>
+</html>

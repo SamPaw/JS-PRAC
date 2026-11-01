@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Open Child Window with Dimensions</title>
+</head>
+<body>
+    <h2>Open Child Window with Specified Dimensions</h2>
+
+    <button onclick="openSpecificWindow()">Open 400x300 Child Window</button>
+
+    <script>
+        function openSpecificWindow() {
+            let child = window.open("", "child400x300", "width=400,height=300,top=150,left=200");
+            child.document.write("<h3>Child Window</h3>");
+            child.document.write("<p>Dimensions: Width = 400px, Height = 300px</p>");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Radio Buttons and Checkboxes</title>
+</head>
+<body>
+    <h2>Radio Buttons and Checkboxes</h2>
+    <form>
+        <p>Select Stream:</p>
+        <input type="radio" name="stream" value="Computer"> Computer<br>
+        <input type="radio" name="stream" value="IT"> Information Technology<br>
+        <input type="radio" name="stream" value="Civil"> Civil<br>
+
+        <p>Select Known Languages:</p>
+        <input type="checkbox" name="lang" value="C++"> C++<br>
+        <input type="checkbox" name="lang" value="Java"> Java<br>
+        <input type="checkbox" name="lang" value="Python"> Python<br><br>
+
+        <button type="button" onclick="showSelections()">Show Selections</button>
+    </form>
+
+    <div id="selectionResult"></div>
+
+    <script>
+        function showSelections() {
+            let streamEls = document.getElementsByName("stream");
+            let selectedStream = "None";
+            for (let i = 0; i < streamEls.length; i++) {
+                if (streamEls[i].checked) {
+                    selectedStream = streamEls[i].value;
+                    break;
+                }
+            }
+
+            let langEls = document.getElementsByName("lang");
+            let selectedLangs = [];
+            for (let i = 0; i < langEls.length; i++) {
+                if (langEls[i].checked) {
+                    selectedLangs.push(langEls[i].value);
+                }
+            }
+
+            document.getElementById("selectionResult").innerHTML =
+                "<h3>Selected:</h3>" +
+                "Stream: " + selectedStream + "<br>" +
+                "Languages: " + (selectedLangs.length ? selectedLangs.join(", ") : "None");
+        }
+    </script>
+</body>
+</html>

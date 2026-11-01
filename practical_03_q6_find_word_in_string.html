@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Word in a String</title>
+</head>
+<body>
+    <h2>Find a Word in a String</h2>
+    <script>
+        let sentence = "JavaScript is a versatile scripting language";
+        let searchWord = "versatile";
+
+        let position = sentence.indexOf(searchWord);
+
+        document.write("Sentence: " + sentence + "<br>");
+        if (position !== -1) {
+            document.write("Word '" + searchWord + "' found at index position " + position + ".");
+        } else {
+            document.write("Word '" + searchWord + "' not found.");
+        }
+    </script>
+</body>
+</html>

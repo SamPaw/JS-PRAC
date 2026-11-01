@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form with RegEx Validation</title>
+</head>
+<body>
+    <h2>User Registration Form (RegEx Validated)</h2>
+
+    <form id="regForm" onsubmit="return validateRegistration()">
+        <label>Name:</label><br>
+        <input type="text" id="rName"><br><br>
+
+        <label>Email:</label><br>
+        <input type="text" id="rEmail"><br><br>
+
+        <label>Mobile Number:</label><br>
+        <input type="text" id="rMobile"><br><br>
+
+        <label>Password:</label><br>
+        <input type="password" id="rPass"><br><br>
+
+        <input type="submit" value="Register Now">
+    </form>
+
+    <p id="formStatus" style="font-weight:bold; margin-top:15px;"></p>
+
+    <script>
+        function validateRegistration() {
+            let name = document.getElementById("rName").value.trim();
+            let email = document.getElementById("rEmail").value.trim();
+            let mobile = document.getElementById("rMobile").value.trim();
+            let pass = document.getElementById("rPass").value;
+
+            let nameRegex = /^[A-Za-z\s]+$/;
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            let mobileRegex = /^[6-9]\d{9}$/;
+            let passRegex = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
+
+            let status = document.getElementById("formStatus");
+
+            if (!nameRegex.test(name)) {
+                status.style.color = "red";
+                status.innerText = "Error: Name should contain only letters and spaces.";
+                return false;
+            }
+            if (!emailRegex.test(email)) {
+                status.style.color = "red";
+                status.innerText = "Error: Invalid Email format.";
+                return false;
+            }
+            if (!mobileRegex.test(mobile)) {
+                status.style.color = "red";
+                status.innerText = "Error: Mobile must be 10 digits starting with 6-9.";
+                return false;
+            }
+            if (!passRegex.test(pass)) {
+                status.style.color = "red";
+                status.innerText = "Error: Password must be min 8 characters with letters and numbers.";
+                return false;
+            }
+
+            status.style.color = "green";
+            status.innerText = "Registration successful for " + name + "!";
+            return false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check Numeric using isNaN()</title>
+</head>
+<body>
+    <h2>Check Numeric Value using isNaN()</h2>
+
+    <button onclick="verifyInput()">Check Value</button>
+    <p id="checkResult"></p>
+
+    <script>
+        function verifyInput() {
+            let input = prompt("Enter any value:");
+            if (input === null) return;
+
+            let resultEl = document.getElementById("checkResult");
+            if (input.trim() === "") {
+                resultEl.innerText = "Empty input entered.";
+                return;
+            }
+
+            if (isNaN(input)) {
+                resultEl.style.color = "red";
+                resultEl.innerText = "'" + input + "' is NOT a valid number (isNaN returned true).";
+            } else {
+                resultEl.style.color = "green";
+                resultEl.innerText = "'" + input + "' is a VALID numeric value (isNaN returned false).";
+            }
+        }
+    </script>
+</body>
+</html>

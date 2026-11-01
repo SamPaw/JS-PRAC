@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insert and Delete Array Elements</title>
+</head>
+<body>
+    <h2>Insert and Delete using push(), pop(), shift(), unshift()</h2>
+    <script>
+        let list = [20, 30, 40];
+        document.write("Initial array: " + list.join(", ") + "<br>");
+
+        list.push(50);
+        document.write("After push(50): " + list.join(", ") + "<br>");
+
+        list.unshift(10);
+        document.write("After unshift(10): " + list.join(", ") + "<br>");
+
+        let removedLast = list.pop();
+        document.write("Removed last (pop): " + removedLast + " -> Array: " + list.join(", ") + "<br>");
+
+        let removedFirst = list.shift();
+        document.write("Removed first (shift): " + removedFirst + " -> Array: " + list.join(", ") + "<br>");
+    </script>
+</body>
+</html>

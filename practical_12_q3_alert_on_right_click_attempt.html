@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alert on Right-Click Attempt</title>
+</head>
+<body>
+    <h2>Alert on Right-Click Attempt</h2>
+    <p>Try right-clicking anywhere on this page to trigger an alert.</p>
+
+    <script>
+        document.oncontextmenu = function(e) {
+            alert("Warning: Right clicking is restricted on this webpage!");
+            return false;
+        };
+    </script>
+</body>
+</html>

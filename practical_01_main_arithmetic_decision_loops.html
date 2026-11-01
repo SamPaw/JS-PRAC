@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practical 1 - Arithmetic, Decisions, and Loops</title>
+</head>
+<body>
+    <h2>Arithmetic Operators, Decision-Making, and Loops</h2>
+    <script>
+        let a = 12;
+        let b = 5;
+
+        document.write("<h3>Arithmetic Operations</h3>");
+        document.write("a = " + a + ", b = " + b + "<br>");
+        document.write("Addition (a + b): " + (a + b) + "<br>");
+        document.write("Subtraction (a - b): " + (a - b) + "<br>");
+        document.write("Multiplication (a * b): " + (a * b) + "<br>");
+        document.write("Division (a / b): " + (a / b) + "<br>");
+        document.write("Modulus (a % b): " + (a % b) + "<br>");
+
+        document.write("<h3>Decision-Making (if-else & switch)</h3>");
+        if (a > b) {
+            document.write(a + " is greater than " + b + "<br>");
+        } else {
+            document.write(b + " is greater than " + a + "<br>");
+        }
+
+        let day = 2;
+        switch (day) {
+            case 1: document.write("Day: Monday<br>"); break;
+            case 2: document.write("Day: Tuesday<br>"); break;
+            default: document.write("Day: Other<br>");
+        }
+
+        document.write("<h3>Loops (for, while, do-while)</h3>");
+        document.write("For loop: ");
+        for (let i = 1; i <= 3; i++) {
+            document.write(i + " ");
+        }
+        document.write("<br>While loop: ");
+        let j = 1;
+        while (j <= 3) {
+            document.write(j + " ");
+            j++;
+        }
+        document.write("<br>Do-While loop: ");
+        let k = 1;
+        do {
+            document.write(k + " ");
+            k++;
+        } while (k <= 3);
+    </script>
+</body>
+</html>

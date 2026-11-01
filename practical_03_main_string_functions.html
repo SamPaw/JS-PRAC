@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practical 3 - String Operations and Functions</title>
+</head>
+<body>
+    <h2>String Operations and Built-in Functions</h2>
+    <script>
+        let str = "  JavaScript Programming  ";
+
+        document.write("Original string: '" + str + "'<br>");
+        document.write("Length: " + str.length + "<br>");
+        document.write("Trimmed: '" + str.trim() + "'<br>");
+        document.write("Uppercase: " + str.toUpperCase() + "<br>");
+        document.write("Lowercase: " + str.toLowerCase() + "<br>");
+        document.write("Character at index 4 (charAt): " + str.charAt(4) + "<br>");
+        document.write("IndexOf 'Script': " + str.indexOf("Script") + "<br>");
+        document.write("Substring (2, 12): " + str.substring(2, 12) + "<br>");
+        document.write("Slice (2, 12): " + str.slice(2, 12) + "<br>");
+        document.write("Replace 'JavaScript' with 'Web': " + str.replace("JavaScript", "Web") + "<br>");
+        document.write("Contains 'Java' (using indexOf): " + (str.indexOf("Java") !== -1) + "<br>");
+        document.write("Unicode code at index 4 (charCodeAt): " + str.charCodeAt(4) + "<br>");
+        document.write("Character from Unicode 65 (fromCharCode): " + String.fromCharCode(65) + "<br>");
+        document.write("Concat with ' is Fun': " + str.trim().concat(" is Fun") + "<br>");
+    </script>
+</body>
+</html>

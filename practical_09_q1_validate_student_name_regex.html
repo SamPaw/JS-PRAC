@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validate Student Name using RegEx</title>
+</head>
+<body>
+    <h2>Student Name Validation</h2>
+
+    <label>Enter Student Name:</label><br>
+    <input type="text" id="studentName">
+    <button type="button" onclick="validateStudentName()">Validate</button>
+
+    <p id="msg"></p>
+
+    <script>
+        function validateStudentName() {
+            let name = document.getElementById("studentName").value.trim();
+            let pattern = /^[A-Za-z\s]+$/;
+            let msg = document.getElementById("msg");
+
+            if (name !== "" && pattern.test(name)) {
+                msg.style.color = "green";
+                msg.innerText = "Valid Name: " + name;
+            } else {
+                msg.style.color = "red";
+                msg.innerText = "Invalid Name: Only letters and spaces are allowed!";
+            }
+        }
+    </script>
+</body>
+</html>

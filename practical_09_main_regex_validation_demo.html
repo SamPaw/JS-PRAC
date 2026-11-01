@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practical 9 - RegEx Validation Demo</title>
+</head>
+<body>
+    <h2>Form Validation using Regular Expressions</h2>
+
+    <form onsubmit="return validateAll()">
+        <label>Name (alphabets & spaces only):</label><br>
+        <input type="text" id="vName"><br><br>
+
+        <label>Email:</label><br>
+        <input type="text" id="vEmail"><br><br>
+
+        <label>Mobile Number (10 digits):</label><br>
+        <input type="text" id="vMobile"><br><br>
+
+        <label>Password (min 8 chars, 1 letter, 1 digit):</label><br>
+        <input type="password" id="vPass"><br><br>
+
+        <label>PIN Code (6 digits):</label><br>
+        <input type="text" id="vPin"><br><br>
+
+        <input type="submit" value="Validate All Fields">
+    </form>
+
+    <div id="result" style="margin-top:15px; font-weight:bold;"></div>
+
+    <script>
+        function validateAll() {
+            let name = document.getElementById("vName").value.trim();
+            let email = document.getElementById("vEmail").value.trim();
+            let mobile = document.getElementById("vMobile").value.trim();
+            let pass = document.getElementById("vPass").value;
+            let pin = document.getElementById("vPin").value.trim();
+
+            let nameRegex = /^[A-Za-z\s]+$/;
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            let mobileRegex = /^[6-9]\d{9}$/;
+            let passRegex = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
+            let pinRegex = /^\d{6}$/;
+
+            let res = document.getElementById("result");
+
+            if (!nameRegex.test(name)) {
+                res.style.color = "red";
+                res.innerText = "Invalid Name: Letters and spaces only.";
+                return false;
+            }
+            if (!emailRegex.test(email)) {
+                res.style.color = "red";
+                res.innerText = "Invalid Email format.";
+                return false;
+            }
+            if (!mobileRegex.test(mobile)) {
+                res.style.color = "red";
+                res.innerText = "Invalid Mobile: Must be 10 digits starting with 6-9.";
+                return false;
+            }
+            if (!passRegex.test(pass)) {
+                res.style.color = "red";
+                res.innerText = "Invalid Password: Min 8 characters with at least 1 letter and 1 digit.";
+                return false;
+            }
+            if (!pinRegex.test(pin)) {
+                res.style.color = "red";
+                res.innerText = "Invalid PIN: Exactly 6 digits.";
+                return false;
+            }
+
+            res.style.color = "green";
+            res.innerText = "All fields are valid! Form successfully validated.";
+            return false;
+        }
+    </script>
+</body>
+</html>

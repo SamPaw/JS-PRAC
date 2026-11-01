@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practical 6 - Intrinsic Functions</title>
+</head>
+<body>
+    <h2>JavaScript Intrinsic Functions Demo</h2>
+
+    <button onclick="demoAlert()">1. alert()</button>
+    <button onclick="demoPrompt()">2. prompt()</button>
+    <button onclick="demoConfirm()">3. confirm()</button>
+    <button onclick="demoParse()">4. parseInt() & parseFloat()</button>
+    <button onclick="demoIsNaN()">5. isNaN()</button>
+
+    <div id="demoOutput" style="margin-top:20px; font-weight:bold;"></div>
+
+    <script>
+        function demoAlert() {
+            alert("This is a built-in JavaScript alert message!");
+        }
+
+        function demoPrompt() {
+            let res = prompt("Enter your name:", "Student");
+            document.getElementById("demoOutput").innerText = "prompt() result: " + res;
+        }
+
+        function demoConfirm() {
+            let ans = confirm("Do you wish to proceed?");
+            document.getElementById("demoOutput").innerText = "confirm() returned: " + ans;
+        }
+
+        function demoParse() {
+            let intVal = parseInt("45.67 px");
+            let floatVal = parseFloat("45.67 px");
+            document.getElementById("demoOutput").innerText =
+                "parseInt('45.67 px') = " + intVal + " | parseFloat('45.67 px') = " + floatVal;
+        }
+
+        function demoIsNaN() {
+            let test1 = isNaN("123");
+            let test2 = isNaN("ABC");
+            document.getElementById("demoOutput").innerText =
+                "isNaN('123') = " + test1 + " | isNaN('ABC') = " + test2;
+        }
+    </script>
+</body>
+</html>

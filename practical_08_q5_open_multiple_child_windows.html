@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Open Multiple Child Windows</title>
+</head>
+<body>
+    <h2>Open Multiple Child Windows with Different Sizes</h2>
+
+    <button onclick="openAllWindows()">Open All Child Windows</button>
+    <button onclick="closeAllWindows()">Close All Child Windows</button>
+
+    <script>
+        let windows = [];
+
+        function openAllWindows() {
+            let win1 = window.open("", "winSmall", "width=250,height=200,top=50,left=50");
+            win1.document.write("<h3>Small Window</h3><p>250 x 200</p>");
+            windows.push(win1);
+
+            let win2 = window.open("", "winMedium", "width=400,height=300,top=100,left=350");
+            win2.document.write("<h3>Medium Window</h3><p>400 x 300</p>");
+            windows.push(win2);
+
+            let win3 = window.open("", "winLarge", "width=550,height=400,top=150,left=800");
+            win3.document.write("<h3>Large Window</h3><p>550 x 400</p>");
+            windows.push(win3);
+        }
+
+        function closeAllWindows() {
+            for (let i = 0; i < windows.length; i++) {
+                if (windows[i] && !windows[i].closed) {
+                    windows[i].close();
+                }
+            }
+            windows = [];
+        }
+    </script>
+</body>
+</html>

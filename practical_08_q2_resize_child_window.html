@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resize Child Window</title>
+</head>
+<body>
+    <h2>Resize Child Window</h2>
+
+    <button onclick="openWin()">1. Open Child Window (300x300)</button>
+    <button onclick="resizeWin()">2. Resize to 600x450</button>
+
+    <script>
+        let win = null;
+
+        function openWin() {
+            win = window.open("", "resizableWin", "width=300,height=300,top=100,left=100");
+            win.document.write("<h3>Resizable Window</h3>");
+        }
+
+        function resizeWin() {
+            if (win && !win.closed) {
+                win.resizeTo(600, 450);
+            } else {
+                alert("Open the child window first.");
+            }
+        }
+    </script>
+</body>
+</html>

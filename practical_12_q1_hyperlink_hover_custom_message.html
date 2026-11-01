@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hyperlink Hover Custom Message</title>
+    <style>
+        #statusDisplay {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #eef;
+            border: 1px solid #99c;
+            width: 350px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Custom Message on Hyperlink Hover</h2>
+
+    <p>Move mouse over the link below:</p>
+    <a href="#course-details"
+        onmouseover="setCustomStatus('Viewing Computer Department Course Details')"
+        onmouseout="resetStatus()">
+        Computer Engineering Courses
+    </a>
+
+    <div id="statusDisplay">Status: Idle</div>
+
+    <script>
+        function setCustomStatus(message) {
+            window.status = message;
+            document.getElementById("statusDisplay").innerText = "Status: " + message;
+        }
+
+        function resetStatus() {
+            window.status = "";
+            document.getElementById("statusDisplay").innerText = "Status: Idle";
+        }
+    </script>
+</body>
+</html>

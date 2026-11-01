@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+</head>
+<body>
+    <h2>Student Registration Form</h2>
+    <form id="regForm" onsubmit="return handleRegister()">
+        <label>Student Name:</label><br>
+        <input type="text" id="sname" required><br><br>
+
+        <label>Roll Number:</label><br>
+        <input type="number" id="rollno" required><br><br>
+
+        <label>Branch / Department:</label><br>
+        <select id="branch" required>
+            <option value="">--Select Branch--</option>
+            <option value="Computer Engineering">Computer Engineering</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Electronics">Electronics</option>
+        </select><br><br>
+
+        <label>Email Address:</label><br>
+        <input type="email" id="semail" required><br><br>
+
+        <input type="submit" value="Register Student">
+    </form>
+
+    <div id="regSummary"></div>
+
+    <script>
+        function handleRegister() {
+            let name = document.getElementById("sname").value;
+            let roll = document.getElementById("rollno").value;
+            let branch = document.getElementById("branch").value;
+            let email = document.getElementById("semail").value;
+
+            document.getElementById("regSummary").innerHTML =
+                "<h3>Registration Successful!</h3>" +
+                "Name: " + name + "<br>" +
+                "Roll No: " + roll + "<br>" +
+                "Branch: " + branch + "<br>" +
+                "Email: " + email;
+
+            return false;
+        }
+    </script>
+</body>
+</html>

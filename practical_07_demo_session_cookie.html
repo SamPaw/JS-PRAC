@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Session Cookie Demonstration</title>
+</head>
+<body>
+    <h2>Session Cookie Demo</h2>
+    <p>Session cookies expire when the browser tab/window is closed.</p>
+
+    <button onclick="createSessionCookie()">Create Session Cookie</button>
+    <button onclick="viewSessionCookie()">View Cookies</button>
+
+    <p id="output"></p>
+
+    <script>
+        function createSessionCookie() {
+            document.cookie = "session_user=Sam; path=/";
+            alert("Session cookie 'session_user=Sam' created.");
+        }
+
+        function viewSessionCookie() {
+            document.getElementById("output").innerText = "document.cookie: " + document.cookie;
+        }
+    </script>
+</body>
+</html>

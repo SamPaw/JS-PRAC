@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practical 7 - Session and Persistent Cookies</title>
+</head>
+<body>
+    <h2>Session and Persistent Cookies</h2>
+
+    <label>Cookie Key:</label>
+    <input type="text" id="cKey" value="username"><br><br>
+
+    <label>Cookie Value:</label>
+    <input type="text" id="cVal" value="Samarthya"><br><br>
+
+    <button onclick="setSessionCookie()">Set Session Cookie</button>
+    <button onclick="setPersistentCookie()">Set Persistent Cookie (7 Days)</button>
+    <button onclick="readCookies()">Read All Cookies</button>
+    <button onclick="deleteCookie()">Delete Cookie</button>
+
+    <div id="cookieDisplay" style="margin-top:20px; font-weight:bold;"></div>
+
+    <script>
+        function setSessionCookie() {
+            let key = document.getElementById("cKey").value;
+            let val = document.getElementById("cVal").value;
+            document.cookie = key + "=" + val + "; path=/";
+            alert("Session cookie set: " + key);
+        }
+
+        function setPersistentCookie() {
+            let key = document.getElementById("cKey").value;
+            let val = document.getElementById("cVal").value;
+            let d = new Date();
+            d.setTime(d.getTime() + (7 * 24 * 60 * 60 * 1000));
+            document.cookie = key + "=" + val + "; expires=" + d.toUTCString() + "; path=/";
+            alert("Persistent cookie set for 7 days: " + key);
+        }
+
+        function readCookies() {
+            document.getElementById("cookieDisplay").innerText = "Cookies: " + (document.cookie || "None");
+        }
+
+        function deleteCookie() {
+            let key = document.getElementById("cKey").value;
+            document.cookie = key + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            alert("Cookie deleted: " + key);
+            readCookies();
+        }
+    </script>
+</body>
+</html>

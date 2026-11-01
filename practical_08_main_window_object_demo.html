@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practical 8 - Window Operations Demo</title>
+</head>
+<body>
+    <h2>Window Positioning and Child Windows Demo</h2>
+
+    <button onclick="openChild()">1. Open Child Window</button>
+    <button onclick="resizeChild()">2. Resize Child Window (500x400)</button>
+    <button onclick="moveChild()">3. Move Child Window (200, 200)</button>
+    <button onclick="focusChild()">4. Focus Child Window</button>
+    <button onclick="closeChild()">5. Close Child Window</button>
+
+    <p id="status"></p>
+
+    <script>
+        let myWindow = null;
+
+        function openChild() {
+            myWindow = window.open("", "demoWin", "width=350,height=250,left=100,top=100");
+            myWindow.document.write("<h3>Child Window</h3><p>Controlled by parent window.</p>");
+            document.getElementById("status").innerText = "Child window opened.";
+        }
+
+        function resizeChild() {
+            if (myWindow && !myWindow.closed) {
+                myWindow.resizeTo(500, 400);
+                document.getElementById("status").innerText = "Resized to 500x400.";
+            } else {
+                alert("Please open the child window first!");
+            }
+        }
+
+        function moveChild() {
+            if (myWindow && !myWindow.closed) {
+                myWindow.moveTo(200, 200);
+                document.getElementById("status").innerText = "Moved to screen coordinate (200, 200).";
+            } else {
+                alert("Please open the child window first!");
+            }
+        }
+
+        function focusChild() {
+            if (myWindow && !myWindow.closed) {
+                myWindow.focus();
+            }
+        }
+
+        function closeChild() {
+            if (myWindow && !myWindow.closed) {
+                myWindow.close();
+                document.getElementById("status").innerText = "Child window closed.";
+            } else {
+                alert("Child window is not open.");
+            }
+        }
+    </script>
+</body>
+</html>

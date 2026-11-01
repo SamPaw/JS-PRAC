@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+</head>
+<body>
+    <h2>Login Form</h2>
+    <form id="loginForm" onsubmit="return validateLogin()">
+        <label>Username:</label><br>
+        <input type="text" id="loginUser"><br><br>
+
+        <label>Password:</label><br>
+        <input type="password" id="loginPass"><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+
+    <p id="loginMessage" style="font-weight:bold;"></p>
+
+    <script>
+        function validateLogin() {
+            let u = document.getElementById("loginUser").value.trim();
+            let p = document.getElementById("loginPass").value.trim();
+            let msgEl = document.getElementById("loginMessage");
+
+            if (u === "" || p === "") {
+                msgEl.style.color = "red";
+                msgEl.innerText = "Error: Username and Password cannot be blank!";
+                return false;
+            }
+
+            if (p.length < 6) {
+                msgEl.style.color = "red";
+                msgEl.innerText = "Error: Password must be at least 6 characters long.";
+                return false;
+            }
+
+            msgEl.style.color = "green";
+            msgEl.innerText = "Login successful for user: " + u;
+            return false;
+        }
+    </script>
+</body>
+</html>

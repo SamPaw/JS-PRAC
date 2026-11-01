@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check Palindrome String</title>
+</head>
+<body>
+    <h2>Check if String is Palindrome</h2>
+    <script>
+        let word = "madam";
+        let reversed = "";
+
+        for (let i = word.length - 1; i >= 0; i--) {
+            reversed += word.charAt(i);
+        }
+
+        document.write("String: " + word + "<br>");
+        if (word.toLowerCase() === reversed.toLowerCase()) {
+            document.write("Result: '" + word + "' is a Palindrome.");
+        } else {
+            document.write("Result: '" + word + "' is NOT a Palindrome.");
+        }
+    </script>
+</body>
+</html>

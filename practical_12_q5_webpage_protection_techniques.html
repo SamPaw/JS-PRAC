@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Webpage Protection Techniques</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .notice {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 10px;
+            border-left: 5px solid #ffeeba;
+            margin-bottom: 15px;
+        }
+        #statusBar {
+            margin-top: 20px;
+            padding: 8px;
+            background: #222;
+            color: #fff;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+    <h2>Basic Webpage Protection Techniques</h2>
+
+    <div class="notice">
+        <strong>Protected Page:</strong> Right-click disabled, text selection disabled, and copy shortcuts (Ctrl+C, Ctrl+U, Ctrl+S) blocked.
+    </div>
+
+    <p>Sample protected intellectual property text content.</p>
+
+    <a href="#terms"
+        onmouseover="updateStatus('Viewing Intellectual Property Terms')"
+        onmouseout="updateStatus('Ready')">
+        Terms of Service
+    </a>
+
+    <div id="statusBar">Status: Ready</div>
+
+    <script>
+        function updateStatus(text) {
+            window.status = text;
+            document.getElementById("statusBar").innerText = "Status: " + text;
+        }
+
+        // Disable right-click
+        document.oncontextmenu = function() {
+            alert("Protected Page: Right-click context menu is disabled!");
+            return false;
+        };
+
+        // Prevent text selection
+        document.onselectstart = function() {
+            return false;
+        };
+
+        // Block Ctrl+C (copy), Ctrl+U (view source), Ctrl+S (save)
+        document.onkeydown = function(e) {
+            e = e || window.event;
+            let key = e.key ? e.key.toLowerCase() : "";
+            if (e.ctrlKey && (key === 'c' || key === 'u' || key === 's')) {
+                alert("Protected Shortcut: Ctrl+" + key.toUpperCase() + " is disabled.");
+                return false;
+            }
+        };
+    </script>
+</body>
+</html>

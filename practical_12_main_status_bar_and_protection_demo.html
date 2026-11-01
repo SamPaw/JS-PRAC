@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practical 12 - Status Bars & Webpage Protection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding-bottom: 50px;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        #statusBar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body oncontextmenu="return disableRightClick(event)">
+    <h2>Status Bar & Webpage Protection Techniques</h2>
+    <p>This page demonstrates status bar messaging and protection features (right-click blocked, selection blocked).</p>
+
+    <p>Hover over this protected link:</p>
+    <a href="#safe-link"
+        onmouseover="showStatus('Navigating to Secure Portal...')"
+        onmouseout="clearStatus()">
+        Hover over me for Status Message
+    </a>
+
+    <div id="statusBar">Status: Ready</div>
+
+    <script>
+        function showStatus(msg) {
+            window.status = msg;
+            document.getElementById("statusBar").innerText = "Status: " + msg;
+        }
+
+        function clearStatus() {
+            window.status = "";
+            document.getElementById("statusBar").innerText = "Status: Ready";
+        }
+
+        function disableRightClick(e) {
+            alert("Security Alert: Right-click context menu is disabled!");
+            return false;
+        }
+
+        document.onselectstart = function() {
+            return false;
+        };
+    </script>
+</body>
+</html>

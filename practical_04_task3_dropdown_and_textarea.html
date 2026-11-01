@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drop-Down List and Text Area</title>
+</head>
+<body>
+    <h2>Drop-Down List and Text Area</h2>
+    <form>
+        <label>Select Course:</label><br>
+        <select id="courseSelect">
+            <option value="">-- Choose Course --</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Data Structures">Data Structures</option>
+            <option value="Database Systems">Database Systems</option>
+        </select><br><br>
+
+        <label>Course Feedback / Comments:</label><br>
+        <textarea id="comments" rows="4" cols="35"></textarea><br><br>
+
+        <button type="button" onclick="displayCourseFeedback()">Display Feedback</button>
+    </form>
+
+    <div id="feedbackOutput"></div>
+
+    <script>
+        function displayCourseFeedback() {
+            let course = document.getElementById("courseSelect").value;
+            let comments = document.getElementById("comments").value;
+
+            document.getElementById("feedbackOutput").innerHTML =
+                "Selected Course: " + (course || "None") + "<br>" +
+                "Comments: " + comments;
+        }
+    </script>
+</body>
+</html>

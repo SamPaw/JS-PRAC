@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Image Gallery with Rollover Effects</title>
+</head>
+<body>
+    <h2>Multiple Images Gallery with Rollover Effects</h2>
+    <p>Hover over any image to see the alternative view:</p>
+
+    <img id="g1" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='100'><rect width='150' height='100' fill='%23F44336'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='Arial'>Photo 1</text></svg>"
+        onmouseover="hoverGallery(this, g1Hover)"
+        onmouseout="hoverGallery(this, g1Def)"
+        style="margin:5px; border:2px solid #ccc; cursor:pointer;">
+
+    <img id="g2" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='100'><rect width='150' height='100' fill='%234CAF50'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='Arial'>Photo 2</text></svg>"
+        onmouseover="hoverGallery(this, g2Hover)"
+        onmouseout="hoverGallery(this, g2Def)"
+        style="margin:5px; border:2px solid #ccc; cursor:pointer;">
+
+    <img id="g3" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='100'><rect width='150' height='100' fill='%232196F3'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='Arial'>Photo 3</text></svg>"
+        onmouseover="hoverGallery(this, g3Hover)"
+        onmouseout="hoverGallery(this, g3Def)"
+        style="margin:5px; border:2px solid #ccc; cursor:pointer;">
+
+    <script>
+        let g1Def = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='100'><rect width='150' height='100' fill='%23F44336'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='Arial'>Photo 1</text></svg>";
+        let g1Hover = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='100'><rect width='150' height='100' fill='%23D32F2F'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='Arial'>View 1</text></svg>";
+
+        let g2Def = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='100'><rect width='150' height='100' fill='%234CAF50'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='Arial'>Photo 2</text></svg>";
+        let g2Hover = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='100'><rect width='150' height='100' fill='%23388E3C'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='Arial'>View 2</text></svg>";
+
+        let g3Def = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='100'><rect width='150' height='100' fill='%232196F3'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='Arial'>Photo 3</text></svg>";
+        let g3Hover = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='100'><rect width='150' height='100' fill='%231976D2'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='Arial'>View 3</text></svg>";
+
+        function hoverGallery(element, src) {
+            element.src = src;
+        }
+    </script>
+</body>
+</html>
